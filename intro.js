@@ -82,43 +82,33 @@ const grid = [];
     );
   }
 
-  // --- TRANSITION TO WORDS ---
+//   // --- TRANSITION TO WORDS ---
 function transitionToWords(lines) {
   phase = "freeze";
 
-  const blockX = 10; // distance from left edge
-  const startY = Math.floor(gridRows / 2) - Math.floor(lines.length / 2);
 
   grid.forEach((row, y) => {
     row.forEach((cell, x) => {
-      // blank spaces above and below
+    //   // blank spaces above and below
         const blockWidth = Math.max(...lines.map(l => l.length));
         const blockHeight = lines.length;   
-
+        const blockX = Math.floor((gridCols - blockWidth) / 2);
+        const startY = Math.floor((gridRows - blockHeight) / 2);
         let targetChar = cell.element.textContent;
 
-        // top and bottom borders
-        if (
-            (y === startY - 1 || y === startY + blockHeight) &&
-            x >= blockX - 1 &&
-            x <= blockX + blockWidth
-        ) {
-            targetChar = '';
-        }
-
-        // left and right borders
-        if (
-            y >= startY &&
-            y < startY + blockHeight &&
-        (x === blockX - 1 || x === blockX + blockWidth)
-        )  {
-            targetChar = '';
-        }
+        
 
       // main word lines
       lines.forEach((line, i) => {
         if (y === startY + i && x >= blockX && x < blockX + line.length) {
           targetChar = line[x - blockX];
+
+          cell.isWord = true;
+
+          cell.element.classList.add("word");
+        } else {
+            cell.isWord = false;
+            cell.element.classList.remove("word");
         }
       });
 
@@ -143,9 +133,7 @@ function transitionToWords(lines) {
 
   setTimeout(() => {
     transitionToWords([
-      "ABOUT  ",
-      "WORK   ",
-      "CONTACT"
+      "KAMRYN HANLEY",
     ]);
   }, introDuration);
 

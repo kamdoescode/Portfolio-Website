@@ -8,9 +8,76 @@
     <body>
         <div id="grid"></div>
 
+        <!-- intro section -->
+        <div class="hero">
+            <img src="assets/pink-bird-screen.png" class="hero-image"/>
+            <div class="contents-list">
+                <a href="#about">about</a>
+                <a href="#work">work</a>
+                <a href="#contact">contact</a>
+            </div>
+        </div>
+
+        <!-- about section -->
+        <div id="about" class="about-section">
+            <img src="assets/about-section.png" class="about-image" alt="young woman facing right"/>
+            <div class="about-text">
+                <p>Affectionately known across the internet as ladyluck, girlwithlaptop, dreamboatkami, among other titles.</p>
+                <p>Kamryn is a Designer & Developer practicing at the intersection of art and technology.
+                      Canadian born and raised but currently based in London, she studies at University of the Arts London: Creative Computing Institute, working towards a BSc in Creative Computing.
+                      With a background in graphic design and a newfound passion for software development, she’s interested in pushing the boundaries of user interfaces and experiences.
+                </p>
+            </div>
+        </div>
+
+        <!-- work section -->
+        <div id="work" class="work-section">
+            <img src="assets/work-bckg.png" class="work-bckg"/>\
+            <div class="work-row">
+                <div class="work-item">
+                    <img src="assets/dynamic-type.png" alt="webpage with typography displayed"/>
+                    <h3>Dyanmic Typography</h3>
+                    <p>Physical computing project using sensor data to control typography on a webpage</p>
+                </div>
+                <div class="work-item">
+                    <img src="assets/website.png" alt="Webpage with Kamryn Hanley text in the middle">
+                    <h3>Portfolio Site</h3>
+                    <p>Fully designed and coded website using HTML, CSS, JavaScript and GSAP animation.</p>
+                </div>
+                <div class="work-item">
+                    <img src="assets/prototype.png" alt="figma wireframe prototype">
+                    <h3>Web Extension for Text Readability</h3>
+                    <p>HCI Project focusing on accessibility for those with cognitive disorders to custom adjust text for better comprehension</p>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- contact section -->
+         <div id="contact" class="contact-section">
+            <img src="assets/contact-bckg.png" class="contact-bckg"/>
+            <div class="header">
+                <p>contact</p>
+            </div>
+            <div class="contact-links">
+                <a href="mailto:kamryn.hanley@gmail.com">kamryn.hanley@gmail.com</a>
+                <a href="https://github.com/kamdoescode">Github</a>
+                <a href="https://www.linkedin.com/in/kamryn-hanley/">LinkedIn</a>
+                <a href="https://www.instagram.com/girlwithlaptop/">Instagram</a>
+            </div>
+         </div>
+
+       
         <!-- GSAP -->
         <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.0/dist/gsap.min.js"></script>
-        
-        <script src="script.js"></script>
+
+        <!-- GSAP Scrolltrigger plugin -->
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollTrigger.min.js"></script>
+
+        <!-- ScrollTo Plugin -->
+        <script src="https://unpkg.com/gsap@3/dist/ScrollToPlugin.min.js"></script>
+
+        <script src="intro.js"></script>
+        <script src="main.js"></script>
     </body>
 </html>
